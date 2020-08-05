@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+	<link href="test_2.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header>
+		<!-- header with name and logo-->
+		<img alt="conpany_logo" class="logo" src="kiwi_kars_transparentv2.png">
+		<h1 class="header">Kiwi Kars Rental Services</h1>
+	</header>
+	<div class="main_content">
+		<!-- contains all the car cards-->
+		<h2>Please Click on the car you would like to hire</h2><!-- the car cards-->
+		<div class="carCard" data-name="Nissan Tidda" data-price="18">
+			<img alt="Nissan Tidda" src="Nissan%20Tidda%20Card.jpg">
+			<div class="textOverlay">
+				<h3></h3><br>
+			</div>
+		</div>
+		<div class="carCard" data-name="Suzuki Swift" data-price="18">
+			<img alt="Suzuki Swift" height="360" src="Suzuki%20Swift%20Card.pdn" width="910">
+			<div class="textOverlay">
+				<h3></h3><br>
+			</div>
+		</div>
+		<div class="carCard" data-name="mazda 3" data-price="23">
+			<img alt="mazda_3" height="350" src="mazda_3.JPG" width="900">
+			<div class="textOverlay">
+				<!--when the car is hovered over the css can be used through text overlay-->
+				<h3></h3><br>
+			</div>
+		</div>
+		<div class="carCard" data-name="Holden Trax" data-price="41">
+			<img alt="holden_trax" height="350" src="Car%20thingy.jpg" width="900">
+			<div class="textOverlay">
+				<h3></h3><br>
+			</div>
+		</div>
+		<div class="carCard" data-name="Holden Captiva" data-price="52">
+			<img alt="Holden Captiva" height="360" src="Holden%20Captiva%20Card.jpg" width="910">
+			<div class="textOverlay">
+				<h3></h3><br>
+			</div>
+		</div>
+		<div class="carCard" data-name="Toyoto Estima" data-price="62">
+			<img alt="Toyota Estima" height="360" src="Toyota%20Estima%20Card.jpg" width="910">
+			<div class="textOverlay">
+				<h3></h3><br>
+			</div>
+		</div>
+		<div class="carCard" data-name="Ford Mondeo" data-price="86">
+			<img alt="Ford Mondeo" height="360" src="Ford Mondeo Card 2.jpg" width="910">
+			<div class="textOverlay">
+				<h3></h3><br>
+			</div>
+		</div>
+		<div class="carCard" data-name="Nissan Leaf" data-price="89">
+			<img alt="Nissan Leaf" height="360" src="Nissan%20Leaf%20Card.jpg" width="910">
+			<div class="textOverlay">
+				<h3></h3><br>
+			</div>
+		</div>
+	</div>
+	<h1 id="carInfomation">Car Infomation</h1><!--table containing outputs for user to see their information-->
+	<table>
+		<tr>
+			<th>Car Information</th>
+			<th></th>
+		</tr>
+		<tr>
+			<td>Car</td>
+			<td>
+				<div id="carOutput"></div>
+			</td><!-- car name-->
+		</tr>
+		<tr>
+			<td>Car Price/Day</td>
+			<td>
+				<div id="priceOutput"></div>
+			</td><!--car price-->
+		</tr>
+		<tr>
+			<td>Booking Fee</td>
+			<td>
+				<div>
+					$50
+				</div><!--booking fee-->
+			</td>
+		</tr>
+		<tr>
+			<td>Insurance</td>
+			<td>
+				<div>
+					$20/day
+				</div><!--insurance fee-->
+			</td>
+		</tr>
+		<tr>
+			<td>Total Cost</td>
+			<td>
+				<div id="totalPriceOutput"></div><!--total price-->
+			</td>
+		</tr>
+		<tr>
+			<td>Extras</td>
+			<td>
+				<div id="extrasOutput"></div><!--extras clicked-->
+			</td>
+		</tr>
+	</table>
+	<h2>Extras</h2><!-- extras check boxes-->
+	<label><input class="addCheck" data-name="Snow Chains" data-price="60" type="checkbox" value="Snow chains">Snow chains - $60</label><br>
+	<label><input class="addCheck" data-name="Roof Rack" data-price="90" type="checkbox" value="roof rack">Roof Rack - $90</label><br>
+	<label><input class="addCheck" data-name="Bike Rack" data-price="120" type="checkbox" value="bike rack">Bike Rack (max, 3 bikes) - $120</label><br>
+	<label><input class="addCheck" data-name="GPS" data-price="35" type="checkbox" value="GPS">GPS - $35</label><br>
+	<label><input class="addCheck" data-name="Child Booster Seat" data-price="50" type="checkbox" value="booster seat"> Child Booster Seat (9kg - 36kg) - $50</label><br>
+	<br>
+	<br>
+	<label>Pick up Date:</label><br>
+	<!--date inputs-->
+	<form>
+		<input autocomplete="on" id="dateInput" onchange="bookingTimes()" required="" type="date"><br>
+		<br>
+		<label>Number of Days:</label><input autocomplete="on" class="numberDays" id="numberDays" max="14" min="1" onchange="bookingTimes()" required="" type="number"><br>
+		<br>
+		<!--number of days-->
+	</form>
+	<form>
+		<!-- client infomation inputs so they can be contacted-->
+		First Name:<input autocomplete="on" id="firstNameInput" placeholder="John" required="" title="Enter your first name" type="text"><br>
+		<br>
+		Last Name:<input autocomplete="on" id="lastNameInput" placeholder="Smith" required="" title="Enter your last name" type="text"><br>
+		<br>
+		Age:<input autocomplete="on" id="ageInput" placeholder="Older than 25" required="" title="Please eneter your age" type="number"><br>
+		<br>
+		Email address:<input autocomplete="on" id="emailInput" placeholder="johnsmith@gmail.com" required="" title="Enter your email address" type="email"><br>
+		<br>
+		Phone Number:<input autocomplete="on" id="phoneInput" placeholder="03 4775277" required="" title="Enter your phone number" type="tel"><br>
+		<br>
+		<label>Comments</label><br>
+		<textarea id="comentInput" placeholder="Please enter any other information here"></textarea><br>
+		<br>
+	</form>
+	<div>
+		<button id="confirmButton" onclick="customerInfo()" type="button">confirm Rental</button><!--button to submit and push every thing through to firebase-->
+		<div id="textOverlay"></div>
+	</div>
+	<footer>
+		<!--footer with all the detailes of the companey and the logo-->
+		<img alt="company_logo" src="kiwi_kars_transparentv2.png" width="120">
+		<p>Kiwi Kars<br>
+		2 Arther Street, City Rise, Dunedin, 9016<br>
+		(03) 477-5277<br>
+		kiwi-kars</p>
+	</footer>
+	<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
+	<div id="confirmOverlay">
+		<p>Plase check your email</p><a onclick=" document.getElementsByClassName('overlay').style.height = '0';">&times;</a>
+	</div><!-- The core Firebase JS SDK is always required and must be listed first -->
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js">
+	</script> <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+	 
+	<script>
+	    // Your web app's Firebase configuration
+	    var firebaseConfig = {
+	      apiKey: "AIzaSyD3J22uNxsdG4g1xqzAwfkmss87CPeYCC8",
+	      authDomain: "kiwi-kars-a4712.firebaseapp.com",
+	      databaseURL: "https://kiwi-kars-a4712.firebaseio.com",
+	      projectId: "kiwi-kars-a4712",
+	      storageBucket: "kiwi-kars-a4712.appspot.com",
+	      messagingSenderId: "198839761477",
+	      appId: "1:198839761477:web:9359eb48738549c413c12c"
+	    };
+	    // Initialize Firebase
+	    firebase.initializeApp(firebaseConfig);
+	</script> 
+	<script src="Test_2.js">
+	</script> <!--the link to the javaScript-->
+</body>
+</html>

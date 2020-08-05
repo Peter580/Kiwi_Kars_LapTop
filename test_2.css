@@ -1,0 +1,123 @@
+@charset "utf-8";
+/* CSS Document */
+
+header {
+	background-color: #F0FFF0;
+	height: 170px;
+	color: black;
+	font-size: 130%;
+	text-align: right;
+	padding: 30px;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"
+}
+body {
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	width: 80%;
+	margin: auto;
+	padding: 30px;
+	background-color: white;
+}
+#confirmOverlay {
+	/* style on confirm overlay */
+	position: fixed;
+	overflow: hidden;
+	text-align: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #F0FFF0;
+	opacity: 0.95;
+	transition: 0.2s;
+	width: 100vw;
+	height: 0;
+	/* height adjusted to expand overlay */
+}
+#confirmOverlay p {
+	/* style on text portion of confirm overlay */
+	line-height: 100vh;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 5vw;
+	opacity: 1.0;
+	color: black;
+}
+#confirmOverlay a {
+	/* style on cross to close confirm overlay */
+	text-decoration: none;
+	color: #ffffff;
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 45px;
+	font-size: 90px;
+}
+#confirmOverlay a:hover {
+	color: #cccccc;
+}
+#confirmButton {
+	background-color: #4CAF50;
+	/* Green */
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	border-radius: 8px;
+}
+#confirmButton {
+	background-color: white;
+	color: black;
+	border: 2px solid #4CAF50;
+}
+#confirmButton:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+.logo {
+	float: left;
+	display: inline-block;
+	height: 100px;
+	width: auto;
+}
+.carCard {
+	/*style for the room card container */
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	width: 100%vw;
+}
+.carCard img {
+	width: 100%vw;
+}
+.textOverlay {
+	/* style of overlay on car card, only displayed on hover */
+	background-color: #F0FFF0;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	line-height: 100%;
+	text-align: center;
+	opacity: 0.0;
+	transition: 0.2;
+	font-size: 30px;
+	transition-duration: 0.4s;
+}
+.textOverlay:hover {
+	opacity: 0.9;
+}
+footer {
+	background-color: #F0FFF0;
+	height: 100px;
+	colour: black;
+	font-size: 100%;
+	text-align: left;
+	padding: 20px 150px;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+}
